@@ -1,0 +1,6 @@
+type: object
+properties:
+  _rev:
+    type: string
+    format: uuidv4
+additionalProperties: false

@@ -1,0 +1,239 @@
+parameters:
+  - $ref: ../components/parameters/group.yaml
+  - $ref: ../components/parameters/form.yaml
+  - $ref: ../components/parameters/org.yaml
+  - $ref: ../components/parameters/catalog.yaml
+  - $ref: ../components/parameters/dataset.yaml
+  - $ref: ../components/parameters/version.yaml
+  - $ref: ../components/parameters/model.yaml
+  - $ref: ../components/parameters/id.yaml
+  - $ref: ../components/parameters/traceparent.yaml
+  - $ref: ../components/parameters/tracestate.yaml
+  - $ref: ../components/parameters/If-None-Match.yaml
+  - $ref: ../components/parameters/Accept-Language.yaml
+
+head:
+  tags:
+    - object
+  security:
+    - {}
+  summary: Return only headers for the API.
+  description: |
+    `HEAD` method requests the headers that would be returned if the HEAD request's URL was instead requested with the `GET` method.
+  operationId: headOne
+  responses:
+    '200':
+      description: OK
+    '400':
+      $ref: ../components/responses/error400.yaml
+
+get:
+  tags:
+    - object
+  security:
+    - UAPI_auth:
+      - uapi:/
+  summary: Get a single object by given {id}.
+  description: |
+    Retrieve a single specific object based on it's unique object identifier {id}
+  operationId: getOne
+  responses:
+    '200':
+      description: OK
+      headers:
+        traceresponse:
+          $ref: ../components/headers/traceresponse.yaml
+        Cache-Control:
+          $ref: ../components/headers/Cache-Control.yaml
+        Last-Modified:
+          $ref: ../components/headers/Last-Modified.yaml
+        ETag:
+          $ref: ../components/headers/ETag.yaml
+        Vary:
+          $ref: ../components/headers/Vary.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/object.yaml
+        text/csv:
+          schema:
+            $ref: ../components/schemas/objects-csv.yaml
+    '304':
+      description: Not Modified
+      headers:
+        traceresponse:
+          $ref: ../components/headers/traceresponse.yaml
+        Cache-Control:
+          $ref: ../components/headers/Cache-Control.yaml
+        Last-Modified:
+          $ref: ../components/headers/Last-Modified.yaml
+        ETag:
+          $ref: ../components/headers/ETag.yaml
+        Vary:
+          $ref: ../components/headers/Vary.yaml
+
+    '400':
+      $ref: ../components/responses/error400.yaml
+    '404':
+      $ref: ../components/responses/error404.yaml
+    '500':
+      $ref: ../components/responses/error500.yaml
+    '503':
+      $ref: ../components/responses/error503.yaml
+
+post:
+  tags:
+    - object
+  security:
+    - UAPI_auth:
+      - uapi:/
+  summary: Upsert an object by {id}. This operation can only be performed on fields that can be indexed.
+  description: |
+    This performs an `Upsert` action. First it checks if there is an existing object based on `{id}`, if there is, it performs `Patch` action, if there isn't it performs `Update`
+  operationId: upsertOne
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/upsert.yaml
+  responses:
+    '200':
+      description: OK
+      headers:
+        traceresponse:
+          $ref: ../components/headers/traceresponse.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/object.yaml
+    '400':
+      $ref: ../components/responses/error400.yaml
+    '403':
+      $ref: ../components/responses/error403.yaml
+    '404':
+      $ref: ../components/responses/error404.yaml
+    '500':
+      $ref: ../components/responses/error500.yaml
+    '503':
+      $ref: ../components/responses/error503.yaml
+
+put:
+  tags:
+    - object
+  security:
+    - UAPI_auth:
+      - uapi:/
+  summary: Update a single object by {id}.
+  description: |
+    Overwrite whole object. Property values, that are not given in request
+    body, will be reset to defaul values.
+
+    This triggers `_rev` to be updated. And before update, existing `_rev`
+    will be compared with given in request body, to prevent concurent
+    overwrites.
+  operationId: updateOne
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          anyOf:
+            - $ref: ../components/schemas/update.yaml
+  responses:
+    '200':
+      description: OK
+      headers:
+        traceresponse:
+          $ref: ../components/headers/traceresponse.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/object.yaml
+    '400':
+      $ref: ../components/responses/error400.yaml
+    '403':
+      $ref: ../components/responses/error403.yaml
+    '404':
+      $ref: ../components/responses/error404.yaml
+    '500':
+      $ref: ../components/responses/error500.yaml
+    '503':
+      $ref: ../components/responses/error503.yaml
+
+patch:
+  tags:
+    - object
+  security:
+    - UAPI_auth:
+      - uapi:/
+  summary: Patch a single object.
+  description: |
+    Partial object update, only property values given in request body will
+    be update, other properties will not be touched.
+
+    This triggers `_rev` to be updated. And before update, existing `_rev`
+    will be compared with given in request body, to prevent concurent
+    overwrites.
+  operationId: patchOne
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/update.yaml
+  responses:
+    '200':
+      description: OK
+      headers:
+        traceresponse:
+          $ref: ../components/headers/traceresponse.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/object.yaml
+    '400':
+      $ref: ../components/responses/error400.yaml
+    '403':
+      $ref: ../components/responses/error403.yaml
+    '404':
+      $ref: ../components/responses/error404.yaml
+    '500':
+      $ref: ../components/responses/error500.yaml
+    '503':
+      $ref: ../components/responses/error503.yaml
+
+delete:
+  tags:
+    - object
+  security:
+    - UAPI_auth:
+      - uapi:/
+  summary: Delete a single object by {id}
+  description: |
+    Delete object. This is a soft delete operation, object should not be
+    deleted, but marked for deletion. Soft delete is needed for changes API
+    to know, when something was deleted.
+
+    After some agreed time period, objects marked as deleted can be deleted
+    permanently.
+
+    Before delete, existing `_rev` will be compared with given in request
+    body, to prevent concurent overwrites.
+  operationId: deleteOne
+  responses:
+    '204':
+      description: No Content
+      headers:
+        traceresponse:
+          $ref: ../components/headers/traceresponse.yaml
+    '400':
+      $ref: ../components/responses/error400.yaml
+    '403':
+      $ref: ../components/responses/error403.yaml
+    '404':
+      $ref: ../components/responses/error404.yaml
+    '500':
+      $ref: ../components/responses/error500.yaml
+    '503':
+      $ref: ../components/responses/error503.yaml

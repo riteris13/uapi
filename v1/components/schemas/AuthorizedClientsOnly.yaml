@@ -1,0 +1,25 @@
+type: object
+properties:
+  code: 
+    type: string
+    description: AuthorizedClientsOnly
+  type:
+    type: string
+    description: system
+  template:
+    type: string
+    description: This resource can only be accessed by an authorized client.
+  message:
+    description: |
+      Message within the error object contains a more detailed description of the server errors.
+      These should include more detailed overview of the internal, business logic or request processing errors that have occurred.
+
+      For example:
+        - "Could not find signature for and: <DaskDataFrameQueryBuilder, Expr>"
+        - "Cannot use .astype to convert from timezone-aware dtype to timezone-naive dtype. Use obj.tz_localize(None) or obj.tz_convert('UTC').tz_localize(None) instead."
+        - "Property {property!r} not found"
+        - "Given value {value} is not defined in enum."
+        - "New item has revision already set"
+        - "You do not have permission to push this property."
+    type: string
+  additionalProperties: true

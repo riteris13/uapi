@@ -1,0 +1,2 @@
+description: Spatial definition. Same as `geometry`, but defines spatial definition for the entire model. Only one property in the model can have `spatial` type.
+$ref: ./geometry.yaml

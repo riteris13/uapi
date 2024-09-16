@@ -1,0 +1,8 @@
+description: |
+  `Last-Modified` header that returns the `timestamp` of the last data modification. This is part of caching and is optional functionality.
+required: false
+schema:
+  type: string
+  format: timestamp
+  examples:
+    - Tue, 22 Feb 2022 20:20:20 GMT

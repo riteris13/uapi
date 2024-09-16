@@ -1,0 +1,16 @@
+name: group
+in: path
+required: true
+schema:
+  type: string
+  enum:
+    - standards
+    - datasets
+description: |
+  Group of data, currently two groups are available:
+
+  - `standards` - for data compatible with a standard.
+  - `datasets` - for a non-standard data.
+
+  There is another group called `services`, which is not considered as
+  data API. Service API is different from data API, more flexible.

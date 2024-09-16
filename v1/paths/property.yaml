@@ -1,0 +1,238 @@
+parameters:
+  - $ref: ../components/parameters/group.yaml
+  - $ref: ../components/parameters/form.yaml
+  - $ref: ../components/parameters/org.yaml
+  - $ref: ../components/parameters/catalog.yaml
+  - $ref: ../components/parameters/dataset.yaml
+  - $ref: ../components/parameters/version.yaml
+  - $ref: ../components/parameters/model.yaml
+  - $ref: ../components/parameters/id.yaml
+  - $ref: ../components/parameters/traceparent.yaml
+  - $ref: ../components/parameters/tracestate.yaml
+  - $ref: ../components/parameters/If-None-Match.yaml
+  - $ref: ../components/parameters/Accept-Language.yaml
+  - $ref: ../components/parameters/property.yaml
+
+head:
+  tags:
+    - subresource
+  security:
+    - {}
+  summary: Return only headers for the API.
+  description: |
+    `HEAD` method requests the headers that would be returned if the HEAD request's URL was instead requested with the `GET` method.
+  operationId: headProperty
+  responses:
+    '200':
+      description: OK
+    '400':
+      $ref: ../components/responses/error400.yaml
+    '500':
+      $ref: ../components/responses/error500.yaml
+    '503':
+      $ref: ../components/responses/error503.yaml
+
+get:
+  tags: 
+    - subresource
+  security:
+    - UAPI_auth:
+      - uapi:/
+  summary: For a given specific object by {id}, retrieve a {property} from it's structure (subresource).
+  description: |
+    Retrieve a specific property from an object structure.
+
+    By default when retrieving object you recive all data items from it's structure, using this service you retrieve a specific property from it's structure.
+
+    If provided {property} is a file instead of getting the data, file is provided instead as binary bit stream.
+  operationId: getProperty
+  responses:
+    "200":
+      description: "OK"
+      headers:
+        traceresponse:
+          $ref: ../components/headers/traceresponse.yaml
+        Cache-Control:
+          $ref: ../components/headers/Cache-Control.yaml
+        Last-Modified:
+          $ref: ../components/headers/Last-Modified.yaml
+        ETag:
+          $ref: ../components/headers/ETag.yaml
+        Vary:
+          $ref: ../components/headers/Vary.yaml
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ../components/schemas/absent.yaml
+              - $ref: ../components/schemas/boolean.yaml
+              - $ref: ../components/schemas/integer.yaml
+              - $ref: ../components/schemas/number.yaml
+              - $ref: ../components/schemas/binary.yaml
+              - $ref: ../components/schemas/string.yaml
+              - $ref: ../components/schemas/text.yaml
+              - $ref: ../components/schemas/dateTime.yaml
+              - $ref: ../components/schemas/date.yaml
+              - $ref: ../components/schemas/time.yaml
+              - $ref: ../components/schemas/temporal.yaml
+              - $ref: ../components/schemas/geometry.yaml
+              - $ref: ../components/schemas/spatial.yaml
+              - $ref: ../components/schemas/money.yaml
+              - $ref: ../components/schemas/image.yaml
+              - $ref: ../components/schemas/generic.yaml
+              - $ref: ../components/schemas/ref.yaml
+              - $ref: ../components/schemas/backref.yaml
+              - $ref: ../components/schemas/array.yaml
+              - $ref: ../components/schemas/url.yaml
+              - $ref: ../components/schemas/uri.yaml
+              - $ref: ../components/schemas/jsonobject.yaml
+    '304':
+      description: Not Modified
+      headers:
+        traceresponse:
+          $ref: ../components/headers/traceresponse.yaml
+        Cache-Control:
+          $ref: ../components/headers/Cache-Control.yaml
+        Last-Modified:
+          $ref: ../components/headers/Last-Modified.yaml
+        ETag:
+          $ref: ../components/headers/ETag.yaml
+        Vary:
+          $ref: ../components/headers/Vary.yaml
+
+    '400':
+      $ref: ../components/responses/error400.yaml
+    '401':
+      $ref: ../components/responses/error401.yaml
+    '403':
+      $ref: ../components/responses/error403.yaml
+    '404':
+      $ref: ../components/responses/error404.yaml
+    '500':
+      $ref: ../components/responses/error500.yaml
+    '503':
+      $ref: ../components/responses/error503.yaml
+
+post:
+  tags:
+    - subresource
+  security:
+    - UAPI_auth:
+      - uapi:/
+  summary: Upsert an object property by object {id} and {property}. This operation can only be performed on fields that can be indexed.
+  description: |
+    This performs an `Upsert` action. First it checks if there is an existing object based on `{id}` and if there is {property}, if there is, it performs `Patch` action, if there isn't it performs `Update`
+  operationId: upsertProperty
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/upsert.yaml
+  responses:
+    '200':
+      description: OK
+      headers:
+        traceresponse:
+          $ref: ../components/headers/traceresponse.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/object.yaml
+    '400':
+      $ref: ../components/responses/error400.yaml
+    '401':
+      $ref: ../components/responses/error401.yaml
+    '403':
+      $ref: ../components/responses/error403.yaml
+    '409':
+      $ref: ../components/responses/error409.yaml
+    '404':
+      $ref: ../components/responses/error404.yaml
+    '500':
+      $ref: ../components/responses/error500.yaml
+    '503':
+      $ref: ../components/responses/error503.yaml
+
+put:
+  tags:
+    - subresource
+  security:
+    - UAPI_auth:
+      - uapi:/
+  summary: Update a single object property by {id} and {property}.
+  description: |
+    Overwrite object property value.
+
+    This triggers `_rev` to be updated. And before update, existing `_rev`
+    will be compared with given in request body, to prevent concurent
+    overwrites.
+  operationId: updateProperty
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          anyOf:
+            - $ref: ../components/schemas/update.yaml
+  responses:
+    '200':
+      description: OK
+      headers:
+        traceresponse:
+          $ref: ../components/headers/traceresponse.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/object.yaml
+    '400':
+      $ref: ../components/responses/error400.yaml
+    '401':
+      $ref: ../components/responses/error401.yaml
+    '403':
+      $ref: ../components/responses/error403.yaml
+    '404':
+      $ref: ../components/responses/error404.yaml
+    '409':
+      $ref: ../components/responses/error409.yaml
+    '500':
+      $ref: ../components/responses/error500.yaml
+    '503':
+      $ref: ../components/responses/error503.yaml
+
+delete:
+  tags:
+    - subresource
+  security:
+    - UAPI_auth:
+      - uapi:/
+  summary: Delete a single object property by {id} and {property}
+  description: |
+    Delete object property. This is a soft delete operation, object property should not be
+    deleted, but marked for deletion. Soft delete is needed for changes API
+    to know, when something was deleted.
+
+    After some agreed time period, objects and properties marked as deleted can be deleted
+    permanently.
+
+    Before delete, existing `_rev` will be compared with given in request
+    body, to prevent concurent overwrites.
+  operationId: deleteProperty
+  responses:
+    '204':
+      description: No Content
+      headers:
+        traceresponse:
+          $ref: ../components/headers/traceresponse.yaml
+    '400':
+      $ref: ../components/responses/error400.yaml
+    '401':
+      $ref: ../components/responses/error401.yaml
+    '403':
+      $ref: ../components/responses/error403.yaml
+    '404':
+      $ref: ../components/responses/error404.yaml
+    '500':
+      $ref: ../components/responses/error500.yaml
+    '503':
+      $ref: ../components/responses/error503.yaml

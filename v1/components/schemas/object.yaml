@@ -1,0 +1,73 @@
+type: object
+properties:
+  "@context":
+    $ref: ./_context.yaml
+  _type:
+    $ref: ./_type.yaml
+  _id:
+    description: |
+      Unique object ID in UUID format
+    type: string
+    format: uuidv4
+    examples:
+      - abdd1245-bbf9-4085-9366-f11c0f737c1d
+  _revision:
+    description: |
+      Revision number of the object. This number helps with ensuring data consistency during changes. Every time object is changed, it's revision number has to change.
+    type: string
+    examples:
+      - 16dabe62-61e9-4549-a6bd-07cecfbc3508
+  _txn:
+    description: | 
+      `_txn` is transaction number. Multiple objects can be changed during a single transaction. All objects changed during a single transaction receive same `txn`.
+    type: string
+    examples:
+      - 792a5029-63c9-4c07-995c-cbc063aaac2c
+  _created:
+    description: |
+      Date and time when the object was created provided in a standard format based on [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
+
+      Minimum value: `0001-01-01T00:00:00`
+      Maximum value: `999-12-31T23:59:59.999999`
+    type: string
+  _updated:
+    description: |
+      Date and time when the object was updated provided in a standard format based on [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
+
+      Minimum value: `0001-01-01T00:00:00`
+      Maximum value: `999-12-31T23:59:59.999999`
+    type: string
+patternProperties:
+  ^[a-z](_?[a-z0-9]+)*$:
+    oneOf:
+      - $ref: ../components/schemas/absent.yaml
+      - $ref: ../components/schemas/boolean.yaml
+      - $ref: ../components/schemas/integer.yaml
+      - $ref: ../components/schemas/number.yaml
+      - $ref: ../components/schemas/binary.yaml
+      - $ref: ../components/schemas/string.yaml
+      - $ref: ../components/schemas/text.yaml
+      - $ref: ../components/schemas/dateTime.yaml
+      - $ref: ../components/schemas/date.yaml
+      - $ref: ../components/schemas/time.yaml
+      - $ref: ../components/schemas/temporal.yaml
+      - $ref: ../components/schemas/geometry.yaml
+      - $ref: ../components/schemas/spatial.yaml
+      - $ref: ../components/schemas/money.yaml
+      - $ref: ../components/schemas/file.yaml
+      - $ref: ../components/schemas/image.yaml
+      - $ref: ../components/schemas/generic.yaml
+      - $ref: ../components/schemas/ref.yaml
+      - $ref: ../components/schemas/backref.yaml
+      - $ref: ../components/schemas/array.yaml
+      - $ref: ../components/schemas/url.yaml
+      - $ref: ../components/schemas/uri.yaml
+      - $ref: ../components/schemas/jsonobject.yaml
+additionalProperties: false
+description: |
+  Object represents a single row in a table.
+
+  Some properties can reference other objects, using composition as
+  specified in `components/schemas/ref`, optionally dublicating
+  properties from a referenced model or extending referenced model with
+  new properties.

@@ -1,0 +1,17 @@
+description: |
+  [JSON-LD Context](https://www.w3.org/TR/json-ld/#the-context) information provided by a URL constructed according to this pattern:
+    
+      `https://data.gov.lt/{group}/{form}/{org}/{catalog}/{dataset}/{version}/{model}.jsonld`
+
+  Returned object will consist of context information based on the below schema:
+
+    `{`
+
+        "@base": "https://data.gov.lt/datasets/example/City/"
+        "_id": "@id"
+        "dcterms": "http://purl.org/dc/terms/"
+        "name": "dcterms:name"
+    `}`
+type: string
+examples:
+  - "https://data.gov.lt/datasets/example/42/City.jsonld"

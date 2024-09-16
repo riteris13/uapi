@@ -1,0 +1,3 @@
+image:
+description: Image file with a same structure as file.
+$ref: ./file.yaml

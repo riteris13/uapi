@@ -1,0 +1,16 @@
+type: object
+properties:
+  _rev:
+    type: string
+    format: uuidv4
+    examples:
+      - 792a5029-63c9-4c07-995c-cbc063aaac2c
+  _type:
+    type: string
+    examples:
+      - Continet
+  _value:
+    type: string
+    examples:
+      - Europe
+additionalProperties: false

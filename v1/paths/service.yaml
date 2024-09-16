@@ -1,0 +1,68 @@
+parameters:
+  - $ref: ../components/parameters/form.yaml
+  - $ref: ../components/parameters/org.yaml
+  - $ref: ../components/parameters/catalog.yaml
+  - $ref: ../components/parameters/dataset.yaml
+  - $ref: ../components/parameters/version.yaml
+  - $ref: ../components/parameters/service.yaml
+  - $ref: ../components/parameters/traceparent.yaml
+  - $ref: ../components/parameters/tracestate.yaml
+  - $ref: ../components/parameters/If-None-Match.yaml
+  - $ref: ../components/parameters/Accept-Language.yaml
+
+get:
+  tags:
+    - services
+  security:
+    - {}
+  summary: GET operation
+  operationId: getService
+put:
+  tags:
+    - services
+  security:
+    - {}
+  summary: PUT operation
+  operationId: putService
+post:
+  tags:
+    - services
+  security:
+    - {}
+  summary: POST operation
+  operationId: postService
+delete:
+  tags:
+    - services
+  security:
+    - {}
+  summary: DELETE operation
+  operationId: deleteService
+options:
+  tags:
+    - services
+  security:
+    - {}
+  summary: OPTIONS operation
+  operationId: serviceOptions
+head:
+  tags:
+    - services
+  security:
+    - {}
+  summary: HEAD operation
+  operationId: serviceHead
+patch:
+  tags:
+    - services
+  security:
+    - {}
+  summary: PATCH operation
+  operationId: patchService
+trace:
+  tags:
+    - services
+  security:
+    - {}
+  summary: TRACE operation
+  operationId: serviceTrace

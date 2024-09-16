@@ -1,0 +1,27 @@
+type: object
+properties:
+  api:
+    type: object
+    properties:
+      version:
+        type: string
+        examples:
+          - 0.0.1
+  implementation:
+    type: object
+    properties:
+      name:
+        type: string
+        examples:
+          - Spinta
+      version:
+        type: string
+        examples:
+          - 0.1
+  build:
+    type: object
+    properties:
+      version:
+        type: string
+        examples:
+          - 0.0.1

@@ -1,0 +1,12 @@
+# Other types of return schemas can be defined if a specific additional return format is supported
+type: object
+properties:
+  _header:
+    type: string
+    description: A string of header values of the object separated by ','
+    examples:
+      - _type,_id,_revision,_txn,_objectType,_value
+  _data:
+    type: array
+    items:
+      $ref: ./object-csv.yaml

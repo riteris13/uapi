@@ -1,0 +1,9 @@
+type: object
+properties:
+  healthy:
+    type: boolean
+  dependencies:
+    type: array
+    items:
+      anyOf:
+        - $ref: ./dependency.yaml

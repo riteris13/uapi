@@ -1,0 +1,145 @@
+parameters:
+  - $ref: ../components/parameters/group.yaml
+  - $ref: ../components/parameters/form.yaml
+  - $ref: ../components/parameters/org.yaml
+  - $ref: ../components/parameters/catalog.yaml
+  - $ref: ../components/parameters/dataset.yaml
+  - $ref: ../components/parameters/version.yaml
+  - $ref: ../components/parameters/model.yaml
+  - $ref: ../components/parameters/traceparent.yaml
+  - $ref: ../components/parameters/tracestate.yaml
+  - $ref: ../components/parameters/Cache-Control.yaml
+  - $ref: ../components/parameters/If-None-Match.yaml
+  - $ref: ../components/parameters/Accept-Language.yaml
+
+head:
+  tags:
+    - objects
+  security:
+    - {}
+  summary: Return only headers for the API.
+  description: |
+    `HEAD` method requests the headers that would be returned if the HEAD request's URL was instead requested with the `GET` method.
+  operationId: modelHead
+  responses:
+    '200':
+      description: OK
+    '400':
+      $ref: ../components/responses/error400.yaml
+    '500':
+      $ref: ../components/responses/error500.yaml
+    '503':
+      $ref: ../components/responses/error503.yaml
+
+get:
+  tags:
+    - objects
+  security:
+    - UAPI_auth:
+      - uapi:/
+  summary: Get multiple objects.
+  description: |
+    Return list of objects for a given model.
+  operationId: getAll
+  parameters:
+    - $ref: ../components/parameters/query.yaml
+
+  responses:
+    '200':
+      description: OK
+      headers:
+        traceresponse:
+          $ref: ../components/headers/traceresponse.yaml
+        Cache-Control:
+          $ref: ../components/headers/Cache-Control.yaml
+        Last-Modified:
+          $ref: ../components/headers/Last-Modified.yaml
+        ETag:
+          $ref: ../components/headers/ETag.yaml
+        Vary:
+          $ref: ../components/headers/Vary.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/objects.yaml
+        text/csv:
+          schema:
+            $ref: ../components/schemas/objects-csv.yaml
+    '304':
+      description: Not Modified
+      headers:
+        traceresponse:
+          $ref: ../components/headers/traceresponse.yaml
+        Cache-Control:
+          $ref: ../components/headers/Cache-Control.yaml
+        Last-Modified:
+          $ref: ../components/headers/Last-Modified.yaml
+        ETag:
+          $ref: ../components/headers/ETag.yaml
+        Vary:
+          $ref: ../components/headers/Vary.yaml
+
+    '400':
+      $ref: ../components/responses/error400.yaml
+    '401':
+      $ref: ../components/responses/error401.yaml
+    '403':
+      $ref: ../components/responses/error403.yaml
+    '404':
+      $ref: ../components/responses/error404.yaml
+    '500':
+      $ref: ../components/responses/error500.yaml
+    '503':
+      $ref: ../components/responses/error503.yaml
+
+post:
+  tags:
+    - objects
+  security:
+    - UAPI_auth:
+      - uapi:/
+  summary: Create a single new object or create, update or delete multiple objects in a single request.
+  description: |
+    ## Operation where one or multiple new objects are created.
+
+    When multiple object are created _data is an array of new objects each listing 
+    * _op as operation to be performed
+    * _type as a namespace of modelname where it is to be performed
+    * the new object itself in a form of {"_type" : "_value"} format. Example {"Continent" : "Europe"}
+
+    Or
+
+    A single object is created. New object details should be provided in a form of {"_type" : "_value"} format. Example {"Continent" : "Europe"}
+  operationId: insertAll
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          oneOf:
+            - $ref: ../components/schemas/multiInsert.yaml
+            - $ref: ../components/schemas/insert.yaml
+  responses:
+    '201':
+      description: Created
+      headers:
+        traceresponse:
+          $ref: ../components/headers/traceresponse.yaml
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ../components/schemas/objects.yaml
+              - $ref: ../components/schemas/object.yaml
+    '400':
+      $ref: ../components/responses/error400.yaml
+    '401':
+      $ref: ../components/responses/error401.yaml
+    '403':
+      $ref: ../components/responses/error403.yaml
+    '409':
+      $ref: ../components/responses/error409.yaml
+    '500':
+      $ref: ../components/responses/error500.yaml
+    '503':
+      $ref: ../components/responses/error503.yaml

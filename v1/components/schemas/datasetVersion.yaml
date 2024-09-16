@@ -1,0 +1,4 @@
+type: integer
+pattern: "^[0-9]+$"
+examples:
+  - 1

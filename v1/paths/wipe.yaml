@@ -1,0 +1,58 @@
+parameters:
+  - $ref: ../components/parameters/group.yaml
+  - $ref: ../components/parameters/form.yaml
+  - $ref: ../components/parameters/org.yaml
+  - $ref: ../components/parameters/catalog.yaml
+  - $ref: ../components/parameters/dataset.yaml
+  - $ref: ../components/parameters/version.yaml
+  - $ref: ../components/parameters/model.yaml
+  - $ref: ../components/parameters/id.yaml
+  - $ref: ../components/parameters/traceparent.yaml
+  - $ref: ../components/parameters/tracestate.yaml
+delete:
+  tags:
+    - object
+  security:
+    - UAPI_auth:
+      - uapi:/
+  summary: Hard delete a single object by {id}
+  description: >
+    ## To be used by exception only
+
+    ```wipe``` operation is used by exception only, if there were errors in data
+    upload scripts, data was currupted due to errors etc. It is best to test
+    data upload in test environment.
+
+
+    Data upload practice of deleting all published data and reuploading it is
+    not recommended, since that destroys all if the data change history and it
+    may change data IDs. Data should be uploaded once and then updated whith
+    what has changed.
+  operationId: wipeOne
+  responses:
+    '200':
+      description: OK
+      headers:
+        traceresponse:
+          $ref: ../components/headers/traceresponse.yaml
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              wiped:
+                type: boolean
+                examples:
+                  - true
+    '400':
+      $ref: ../components/responses/error400.yaml
+    '401':
+      $ref: ../components/responses/error401.yaml
+    '403':
+      $ref: ../components/responses/error403.yaml
+    '404':
+      $ref: ../components/responses/error404.yaml
+    '500':
+      $ref: ../components/responses/error500.yaml
+    '503':
+      $ref: ../components/responses/error503.yaml

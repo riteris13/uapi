@@ -1,0 +1,12 @@
+name: tracestate
+in: header
+required: true
+description: |
+  The main purpose of the `tracestate` HTTP header is to provide additional vendor-specific trace identification information across different distributed tracing systems and is a companion header for the `traceparent` field. It also conveys information about the request’s position in multiple distributed tracing graphs.
+  For more context check [***trace-context***](https://w3c.github.io/trace-context/) documentation.
+schema:
+  type: string
+  description: |
+    Consists of a `list` of `list-members` separated by commas (`,`)
+  examples:
+    - rojo=00f067aa0ba902b7,congo=t61rcWkgMzE

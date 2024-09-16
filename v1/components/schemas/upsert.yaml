@@ -1,0 +1,15 @@
+type: object
+properties:
+  _op:
+    type: string
+    enum:
+      - upsert
+  _type:
+    type: string
+    examples:
+      - Continet
+  _value:
+    type: string
+    examples:
+      - Europe
+additionalProperties: false

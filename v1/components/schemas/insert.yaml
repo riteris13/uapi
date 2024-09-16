@@ -1,0 +1,11 @@
+type: object
+properties:
+  _type:
+    type: string
+    examples:
+      - Continet
+  _value:
+    type: string
+    examples:
+      - Europe
+additionalProperties: false

@@ -1,0 +1,5 @@
+description: |
+  Name of the namespace or model
+type: string
+examples:
+  - "datasets/gov/dc/geo/Continent"

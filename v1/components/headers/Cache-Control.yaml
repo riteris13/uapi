@@ -1,0 +1,13 @@
+description: |
+  `Cache-Control` header that returns the caching information of the service. Caching is optional functionality.
+
+  If implemented should return values that depend on the type of the cache and rules that are set for the data. For example if data should only be stored in private cache (e.g. local caches in browsers) it should return `private`. If there are set parameters on data age as an example it should return `max-age`.
+
+  Depending on data usage rules and data sharing agreements that are in place, it should reinforce terms that are relevant to the data in question. Use `no-cache` if data needs to be revalidate before each use with the origin server or `no-store` if data should not be stored in any caches.
+
+  Multiple directives can be used separated by `, `. If they are conflicting, most restrictive directive should be honored.
+required: false
+schema:
+  type: string
+  examples:
+    - no-store

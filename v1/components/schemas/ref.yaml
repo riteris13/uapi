@@ -1,0 +1,65 @@
+description: Reference to an entry in another table
+oneOf:
+  - type: object
+    title: Maturity >= 4
+    properties:
+      _type:
+        type: string
+      _id:
+        type: string
+        format: uuidv4
+      ^[a-z](_?[a-z0-9]+)*$:
+        oneOf:
+          - $ref: ./absent.yaml
+          - $ref: ./boolean.yaml
+          - $ref: ./integer.yaml
+          - $ref: ./number.yaml
+          - $ref: ./binary.yaml
+          - $ref: ./string.yaml
+          - $ref: ./text.yaml
+          - $ref: ./dateTime.yaml
+          - $ref: ./date.yaml
+          - $ref: ./time.yaml
+          - $ref: ./temporal.yaml
+          - $ref: ./geometry.yaml
+          - $ref: ./spatial.yaml
+          - $ref: ./money.yaml
+          - $ref: ./file.yaml
+          - $ref: ./image.yaml
+          - $ref: ./generic.yaml
+          - $ref: ./ref.yaml
+          - $ref: ./backref.yaml
+          - $ref: ./array.yaml
+          - $ref: ./url.yaml
+          - $ref: ./uri.yaml
+          - $ref: ./jsonobject.yaml
+  - type: object
+    title: Maturity < 4
+    properties:
+      _type:
+        type: string
+      ^[a-z](_?[a-z0-9]+)*$:
+        oneOf:
+          - $ref: ./absent.yaml
+          - $ref: ./boolean.yaml
+          - $ref: ./integer.yaml
+          - $ref: ./number.yaml
+          - $ref: ./binary.yaml
+          - $ref: ./string.yaml
+          - $ref: ./text.yaml
+          - $ref: ./dateTime.yaml
+          - $ref: ./date.yaml
+          - $ref: ./time.yaml
+          - $ref: ./temporal.yaml
+          - $ref: ./geometry.yaml
+          - $ref: ./spatial.yaml
+          - $ref: ./money.yaml
+          - $ref: ./file.yaml
+          - $ref: ./image.yaml
+          - $ref: ./generic.yaml
+          - $ref: ./ref.yaml
+          - $ref: ./backref.yaml
+          - $ref: ./array.yaml
+          - $ref: ./url.yaml
+          - $ref: ./uri.yaml
+          - $ref: ./jsonobject.yaml

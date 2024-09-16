@@ -1,0 +1,9 @@
+name: Accept-Language
+in: header
+required: false
+description: |
+  `Accept-Language` header is used to indicate the language preference of the user. It's a list of values with quality factors (e.g., `"de, en"`).
+schema:
+  type: string
+  examples:
+    - lt

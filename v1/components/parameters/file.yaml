@@ -1,0 +1,9 @@
+name: file
+in: path
+required: true
+description: |
+  `file` parameter is used to indicate the file that needs to be retrieved form the object structure.
+schema:
+  type: string
+  examples:
+    - "map"

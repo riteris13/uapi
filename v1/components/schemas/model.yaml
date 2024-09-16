@@ -1,0 +1,4 @@
+type: string
+pattern: ^[A-Z]([A-Z]?[a-z0-9]+)*$
+examples:
+  - City

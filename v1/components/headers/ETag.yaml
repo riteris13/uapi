@@ -1,0 +1,7 @@
+description: |
+  `ETag` header is an entity tag that uniquely represents the requested resource. It is a revision number for this item.
+required: false
+schema:
+  type: string
+  examples:
+    - 16dabe62-61e9-4549-a6bd-07cecfbc3508

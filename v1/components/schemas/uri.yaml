@@ -1,0 +1,2 @@
+description: Uniform Resource Identifier. Used to provide an identifier of an external resource, in an RDF data model it is subject indentifier.
+type: string

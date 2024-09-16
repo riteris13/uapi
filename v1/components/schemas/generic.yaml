@@ -1,0 +1,10 @@
+description: Dynamic relationship with a model. Used when there is a need to reflect a dynamic link to another model - not only via id, but also via it's name. Using this, one element can be linked to multiple models.
+type: object
+properties:
+  object_model:
+    description: Full name of a linked model
+    type: string
+  object_id:
+    description: Linked model ID
+    type: string
+    format: UUID

@@ -1,0 +1,11 @@
+name: Cache-Control
+in: header
+required: false
+description: |
+  `Cache-Control` header should be used if service supports caching. It allows the user to provide directives from their side. `no-cache` can be used to request revalidation of data with the origin server before reuse. `no-store` can be used to request to not store the data in caches.
+
+  Multiple directives can be used separated by `, `. If they are conflicting, most restrictive directive should be honored.
+schema:
+  type: string
+  examples:
+    - no-cache

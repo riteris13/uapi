@@ -1,0 +1,10 @@
+type: object
+properties:
+  _type:
+    type: string
+    examples:
+      - datasets/gov/dc/geo/Continent
+  _data:
+    type: array
+    items:
+      $ref: ./object.yaml

@@ -1,0 +1,8 @@
+description: Bad Request
+headers:
+  traceresponse:
+    $ref: ../headers/traceresponse.yaml
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/ConflictingValue.yaml

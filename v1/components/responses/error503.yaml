@@ -1,0 +1,8 @@
+description: Service Uavailable
+headers:
+  traceresponse:
+    $ref: ../headers/traceresponse.yaml
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/ServiceNotAvailable.yaml

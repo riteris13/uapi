@@ -1,0 +1,5 @@
+# Other types of return schemas can be defined if a specific additional return format is supported
+type: string
+description: A string of object values separated by `,`
+examples:
+  - 'datasets/gov/dc/geo/Continent,abdd1245-bbf9-4085-9366-f11c0f737c1d,16dabe62-61e9-4549-a6bd-07cecfbc3508,792a5029-63c9-4c07-995c-cbc063aaac2c,Continent,Europe,'

@@ -1,0 +1,4 @@
+description: A value of a whole number
+type: integer
+minimum: -2147483648
+maximum: 2147483647

@@ -1,0 +1,10 @@
+description: Internal Server Error
+headers:
+      traceresponse:
+        $ref: ../headers/traceresponse.yaml
+content:
+  application/json:
+    schema:
+      oneOf:
+        - $ref: ../schemas/UnhandledException.yaml
+        - $ref: ../schemas/MultipleRowsFound.yaml

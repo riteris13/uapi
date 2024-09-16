@@ -1,0 +1,2 @@
+description: Non natural language strings of characters. Should be provided based on UTF-8 encoding and should not exceed 1G
+type: string

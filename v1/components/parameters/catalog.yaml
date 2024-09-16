@@ -1,0 +1,11 @@
+name: catalog
+in: path
+required: true
+schema:
+  type: string
+  examples:
+    - adresu_registras
+description: |
+  A catalog or a standard abbreviation or short code name. A data catalog is a curated collection of metadata about datasets.
+
+  All lower case, words separated with `_` symbol.

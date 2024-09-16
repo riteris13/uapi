@@ -1,0 +1,11 @@
+type: object
+properties:
+  _name:
+    description: File name
+    type: string
+  _content_type:
+    description: A [Media type](https://en.wikipedia.org/wiki/Media_type) of the file.
+    type: string
+  _size:
+    description: File size in bytes.
+    type: integer

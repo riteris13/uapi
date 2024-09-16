@@ -1,0 +1,40 @@
+type: object
+properties:
+  _cid:
+    type: integer
+    examples:
+      - 11
+  _id:
+    type: string
+    format: uuidv4
+    examples:
+      - abdd1245-bbf9-4085-9366-f11c0f737c1d
+  _rev:
+    type: string
+    format: uuidv4
+    examples:
+      - 16dabe62-61e9-4549-a6bd-07cecfbc3508
+  _txn:
+    type: string
+    examples:
+      - 792a5029-63c9-4c07-995c-cbc063aaac2c
+  _created:
+    type: string
+    format: datetime
+    examples:
+      - '2021-07-30T14:03:14.645198'
+  _op:
+    type: string
+    enum:
+      - insert
+      - patch
+      - delete
+  _objectType:
+    type: string
+    examples:
+      - Continent
+  _value:
+    type: string
+    examples:
+      - Europe
+additionalProperties: false

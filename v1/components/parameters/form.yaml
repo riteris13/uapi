@@ -1,0 +1,13 @@
+name: form
+in: path
+required: true
+schema:
+  type: string
+  enum:
+    - gov
+    - com
+description: |
+  Organization, type, can be:
+
+  - `gov` - government organization,
+  - `com` - private organization.
