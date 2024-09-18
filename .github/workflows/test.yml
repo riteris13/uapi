@@ -2,9 +2,9 @@ name: Test openapi spec
 
 on:
   push:
-    branches: [ main ]
+    branches: [ wip-oas ]
   pull_request:
-    branches: [ main ]
+    branches: [ wip-oas ]
 
 jobs:
   test:
