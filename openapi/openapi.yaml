@@ -31,7 +31,7 @@ tags:
     description: Operations with multiple Objects
   - name: object
     description: Operations with single Object
-  - name: subresource
+  - name: resource
     description: Operations with Object subresource
   - name: change
     description: Change tracking operations
