@@ -50,6 +50,7 @@ x-tagGroups:
     tags:
       - objects
       - object
+      - resource
       - change
   - name: Services
     tags:
