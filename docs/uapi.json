@@ -35,7 +35,7 @@
       "description": "Operations with single Object"
     },
     {
-      "name": "subresource",
+      "name": "resource",
       "description": "Operations with Object subresource"
     },
     {
@@ -871,7 +871,7 @@
       ],
       "head": {
         "tags": [
-          "subresource"
+          "resource"
         ],
         "security": [
           {}
@@ -896,7 +896,7 @@
       },
       "get": {
         "tags": [
-          "subresource"
+          "resource"
         ],
         "security": [
           {
@@ -1045,7 +1045,7 @@
       },
       "post": {
         "tags": [
-          "subresource"
+          "resource"
         ],
         "security": [
           {
@@ -1108,7 +1108,7 @@
       },
       "put": {
         "tags": [
-          "subresource"
+          "resource"
         ],
         "security": [
           {
@@ -1175,7 +1175,7 @@
       },
       "delete": {
         "tags": [
-          "subresource"
+          "resource"
         ],
         "security": [
           {
@@ -1775,7 +1775,7 @@
             "description": "Given value already exists."
           },
           "message": {
-            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n\nFor example:\n  - \"Could not find signature for and: <DaskDataFrameQueryBuilder, Expr>\"\n  - \"Cannot use .astype to convert from timezone-aware dtype to timezone-naive dtype. Use obj.tz_localize(None) or obj.tz_convert('UTC').tz_localize(None) instead.\"\n  - \"Property {property!r} not found\"\n  - \"Given value {value} is not defined in enum.\"\n  - \"New item has revision already set\"\n  - \"You do not have permission to push this property.\"\n",
+            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n",
             "type": "string"
           },
           "additionalProperties": true
@@ -1797,7 +1797,7 @@
             "description": "_revision must be given on rewrite operation."
           },
           "message": {
-            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n\nFor example:\n  - \"Could not find signature for and: <DaskDataFrameQueryBuilder, Expr>\"\n  - \"Cannot use .astype to convert from timezone-aware dtype to timezone-naive dtype. Use obj.tz_localize(None) or obj.tz_convert('UTC').tz_localize(None) instead.\"\n  - \"Property {property!r} not found\"\n  - \"Given value {value} is not defined in enum.\"\n  - \"New item has revision already set\"\n  - \"You do not have permission to push this property.\"\n",
+            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n",
             "type": "string"
           },
           "additionalProperties": true
@@ -1819,7 +1819,7 @@
             "description": "Invalid operand value for {operator!r} operator."
           },
           "message": {
-            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n\nFor example:\n  - \"Could not find signature for and: <DaskDataFrameQueryBuilder, Expr>\"\n  - \"Cannot use .astype to convert from timezone-aware dtype to timezone-naive dtype. Use obj.tz_localize(None) or obj.tz_convert('UTC').tz_localize(None) instead.\"\n  - \"Property {property!r} not found\"\n  - \"Given value {value} is not defined in enum.\"\n  - \"New item has revision already set\"\n  - \"You do not have permission to push this property.\"\n",
+            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n",
             "type": "string"
           },
           "additionalProperties": true
@@ -1850,7 +1850,7 @@
             }
           },
           "message": {
-            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n\nFor example:\n  - \"Could not find signature for and: <DaskDataFrameQueryBuilder, Expr>\"\n  - \"Cannot use .astype to convert from timezone-aware dtype to timezone-naive dtype. Use obj.tz_localize(None) or obj.tz_convert('UTC').tz_localize(None) instead.\"\n  - \"Property {property!r} not found\"\n  - \"Given value {value} is not defined in enum.\"\n  - \"New item has revision already set\"\n  - \"You do not have permission to push this property.\"\n",
+            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n",
             "type": "string"
           },
           "additionalProperties": true
@@ -1872,7 +1872,7 @@
             "description": "Multiple rows were found."
           },
           "message": {
-            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n\nFor example:\n  - \"Could not find signature for and: <DaskDataFrameQueryBuilder, Expr>\"\n  - \"Cannot use .astype to convert from timezone-aware dtype to timezone-naive dtype. Use obj.tz_localize(None) or obj.tz_convert('UTC').tz_localize(None) instead.\"\n  - \"Property {property!r} not found\"\n  - \"Given value {value} is not defined in enum.\"\n  - \"New item has revision already set\"\n  - \"You do not have permission to push this property.\"\n",
+            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n",
             "type": "string"
           },
           "additionalProperties": true
@@ -1894,7 +1894,7 @@
             "description": "Service is currently not available."
           },
           "message": {
-            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n\nFor example:\n  - \"Could not find signature for and: <DaskDataFrameQueryBuilder, Expr>\"\n  - \"Cannot use .astype to convert from timezone-aware dtype to timezone-naive dtype. Use obj.tz_localize(None) or obj.tz_convert('UTC').tz_localize(None) instead.\"\n  - \"Property {property!r} not found\"\n  - \"Given value {value} is not defined in enum.\"\n  - \"New item has revision already set\"\n  - \"You do not have permission to push this property.\"\n",
+            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n",
             "type": "string"
           },
           "additionalProperties": true
@@ -2011,73 +2011,73 @@
           "^[a-z](_?[a-z0-9]+)*$": {
             "oneOf": [
               {
-                "$ref": "../components/schemas/absent.yaml"
+                "$ref": "#components/schemas/absent"
               },
               {
-                "$ref": "../components/schemas/boolean.yaml"
+                "$ref": "#components/schemas/boolean"
               },
               {
-                "$ref": "../components/schemas/integer.yaml"
+                "$ref": "#components/schemas/integer"
               },
               {
-                "$ref": "../components/schemas/number.yaml"
+                "$ref": "#components/schemas/number"
               },
               {
-                "$ref": "../components/schemas/binary.yaml"
+                "$ref": "#components/schemas/binary"
               },
               {
-                "$ref": "../components/schemas/string.yaml"
+                "$ref": "#components/schemas/string"
               },
               {
-                "$ref": "../components/schemas/text.yaml"
+                "$ref": "#components/schemas/text"
               },
               {
-                "$ref": "../components/schemas/dateTime.yaml"
+                "$ref": "#components/schemas/dateTime"
               },
               {
-                "$ref": "../components/schemas/date.yaml"
+                "$ref": "#components/schemas/date"
               },
               {
-                "$ref": "../components/schemas/time.yaml"
+                "$ref": "#components/schemas/time"
               },
               {
-                "$ref": "../components/schemas/temporal.yaml"
+                "$ref": "#components/schemas/temporal"
               },
               {
-                "$ref": "../components/schemas/geometry.yaml"
+                "$ref": "#components/schemas/geometry"
               },
               {
-                "$ref": "../components/schemas/spatial.yaml"
+                "$ref": "#components/schemas/spatial"
               },
               {
-                "$ref": "../components/schemas/money.yaml"
+                "$ref": "#components/schemas/money"
               },
               {
-                "$ref": "../components/schemas/file.yaml"
+                "$ref": "#components/schemas/file"
               },
               {
-                "$ref": "../components/schemas/image.yaml"
+                "$ref": "#components/schemas/image"
               },
               {
-                "$ref": "../components/schemas/generic.yaml"
+                "$ref": "#components/schemas/generic"
               },
               {
-                "$ref": "../components/schemas/ref.yaml"
+                "$ref": "#components/schemas/ref"
               },
               {
-                "$ref": "../components/schemas/backref.yaml"
+                "$ref": "#components/schemas/backref"
               },
               {
-                "$ref": "../components/schemas/array.yaml"
+                "$ref": "#components/schemas/array"
               },
               {
-                "$ref": "../components/schemas/url.yaml"
+                "$ref": "#components/schemas/url"
               },
               {
-                "$ref": "../components/schemas/uri.yaml"
+                "$ref": "#components/schemas/uri"
               },
               {
-                "$ref": "../components/schemas/jsonobject.yaml"
+                "$ref": "#components/schemas/jsonobject"
               }
             ]
           }
@@ -2143,7 +2143,7 @@
             "description": "This resource can only be accessed by an authorized client."
           },
           "message": {
-            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n\nFor example:\n  - \"Could not find signature for and: <DaskDataFrameQueryBuilder, Expr>\"\n  - \"Cannot use .astype to convert from timezone-aware dtype to timezone-naive dtype. Use obj.tz_localize(None) or obj.tz_convert('UTC').tz_localize(None) instead.\"\n  - \"Property {property!r} not found\"\n  - \"Given value {value} is not defined in enum.\"\n  - \"New item has revision already set\"\n  - \"You do not have permission to push this property.\"\n",
+            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n",
             "type": "string"
           },
           "additionalProperties": true
@@ -2169,7 +2169,7 @@
             "description": "{'WWW-Authenticate': 'Bearer error'='invalid_token'}"
           },
           "message": {
-            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n\nFor example:\n  - \"Could not find signature for and: <DaskDataFrameQueryBuilder, Expr>\"\n  - \"Cannot use .astype to convert from timezone-aware dtype to timezone-naive dtype. Use obj.tz_localize(None) or obj.tz_convert('UTC').tz_localize(None) instead.\"\n  - \"Property {property!r} not found\"\n  - \"Given value {value} is not defined in enum.\"\n  - \"New item has revision already set\"\n  - \"You do not have permission to push this property.\"\n",
+            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n",
             "type": "string"
           },
           "additionalProperties": true
@@ -2191,7 +2191,7 @@
             "description": "Access is forbidden"
           },
           "message": {
-            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n\nFor example:\n  - \"Could not find signature for and: <DaskDataFrameQueryBuilder, Expr>\"\n  - \"Cannot use .astype to convert from timezone-aware dtype to timezone-naive dtype. Use obj.tz_localize(None) or obj.tz_convert('UTC').tz_localize(None) instead.\"\n  - \"Property {property!r} not found\"\n  - \"Given value {value} is not defined in enum.\"\n  - \"New item has revision already set\"\n  - \"You do not have permission to push this property.\"\n",
+            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n",
             "type": "string"
           },
           "additionalProperties": true
@@ -2213,7 +2213,7 @@
             "description": "Resource {id!r} not found."
           },
           "message": {
-            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n\nFor example:\n  - \"Could not find signature for and: <DaskDataFrameQueryBuilder, Expr>\"\n  - \"Cannot use .astype to convert from timezone-aware dtype to timezone-naive dtype. Use obj.tz_localize(None) or obj.tz_convert('UTC').tz_localize(None) instead.\"\n  - \"Property {property!r} not found\"\n  - \"Given value {value} is not defined in enum.\"\n  - \"New item has revision already set\"\n  - \"You do not have permission to push this property.\"\n",
+            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n",
             "type": "string"
           },
           "additionalProperties": true
@@ -2314,7 +2314,7 @@
             "description": "Conflicting Value"
           },
           "message": {
-            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n\nFor example:\n  - \"Could not find signature for and: <DaskDataFrameQueryBuilder, Expr>\"\n  - \"Cannot use .astype to convert from timezone-aware dtype to timezone-naive dtype. Use obj.tz_localize(None) or obj.tz_convert('UTC').tz_localize(None) instead.\"\n  - \"Property {property!r} not found\"\n  - \"Given value {value} is not defined in enum.\"\n  - \"New item has revision already set\"\n  - \"You do not have permission to push this property.\"\n",
+            "description": "Message within the error object contains a more detailed description of the server errors.\nThese should include more detailed overview of the internal, business logic or request processing errors that have occurred.\n",
             "type": "string"
           },
           "additionalProperties": true
@@ -2977,6 +2977,7 @@
       "tags": [
         "objects",
         "object",
+        "resource",
         "change"
       ]
     },

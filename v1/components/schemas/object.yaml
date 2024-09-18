@@ -40,29 +40,29 @@ properties:
 patternProperties:
   ^[a-z](_?[a-z0-9]+)*$:
     oneOf:
-      - $ref: ../components/schemas/absent.yaml
-      - $ref: ../components/schemas/boolean.yaml
-      - $ref: ../components/schemas/integer.yaml
-      - $ref: ../components/schemas/number.yaml
-      - $ref: ../components/schemas/binary.yaml
-      - $ref: ../components/schemas/string.yaml
-      - $ref: ../components/schemas/text.yaml
-      - $ref: ../components/schemas/dateTime.yaml
-      - $ref: ../components/schemas/date.yaml
-      - $ref: ../components/schemas/time.yaml
-      - $ref: ../components/schemas/temporal.yaml
-      - $ref: ../components/schemas/geometry.yaml
-      - $ref: ../components/schemas/spatial.yaml
-      - $ref: ../components/schemas/money.yaml
-      - $ref: ../components/schemas/file.yaml
-      - $ref: ../components/schemas/image.yaml
-      - $ref: ../components/schemas/generic.yaml
-      - $ref: ../components/schemas/ref.yaml
-      - $ref: ../components/schemas/backref.yaml
-      - $ref: ../components/schemas/array.yaml
-      - $ref: ../components/schemas/url.yaml
-      - $ref: ../components/schemas/uri.yaml
-      - $ref: ../components/schemas/jsonobject.yaml
+      - $ref: '#/components/schemas/absent'
+      - $ref: '#/components/schemas/boolean'
+      - $ref: '#/components/schemas/integer'
+      - $ref: '#/components/schemas/number'
+      - $ref: '#/components/schemas/binary'
+      - $ref: '#/components/schemas/string'
+      - $ref: '#/components/schemas/text'
+      - $ref: '#/components/schemas/dateTime'
+      - $ref: '#/components/schemas/date'
+      - $ref: '#/components/schemas/time'
+      - $ref: '#/components/schemas/temporal'
+      - $ref: '#/components/schemas/geometry'
+      - $ref: '#/components/schemas/spatial'
+      - $ref: '#/components/schemas/money'
+      - $ref: '#/components/schemas/file'
+      - $ref: '#/components/schemas/image'
+      - $ref: '#/components/schemas/generic'
+      - $ref: '#/components/schemas/ref'
+      - $ref: '#/components/schemas/backref'
+      - $ref: '#/components/schemas/array'
+      - $ref: '#/components/schemas/url'
+      - $ref: '#/components/schemas/uri'
+      - $ref: '#/components/schemas/jsonobject'
 additionalProperties: false
 description: |
   Object represents a single row in a table.

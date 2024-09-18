@@ -15,7 +15,7 @@ parameters:
 
 head:
   tags:
-    - subresource
+    - resource
   security:
     - {}
   summary: Return only headers for the API.
@@ -34,7 +34,7 @@ head:
 
 get:
   tags: 
-    - subresource
+    - resource
   security:
     - UAPI_auth:
       - uapi:/
@@ -115,7 +115,7 @@ get:
 
 post:
   tags:
-    - subresource
+    - resource
   security:
     - UAPI_auth:
       - uapi:/
@@ -156,7 +156,7 @@ post:
 
 put:
   tags:
-    - subresource
+    - resource
   security:
     - UAPI_auth:
       - uapi:/
@@ -202,7 +202,7 @@ put:
 
 delete:
   tags:
-    - subresource
+    - resource
   security:
     - UAPI_auth:
       - uapi:/
