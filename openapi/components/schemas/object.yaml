@@ -47,7 +47,7 @@ patternProperties:
       - $ref: '#/components/schemas/binary'
       - $ref: '#/components/schemas/string'
       - $ref: '#/components/schemas/text'
-      - $ref: '#/components/schemas/dateTime'
+      - $ref: '#/components/schemas/datetime'
       - $ref: '#/components/schemas/date'
       - $ref: '#/components/schemas/time'
       - $ref: '#/components/schemas/temporal'
@@ -56,13 +56,12 @@ patternProperties:
       - $ref: '#/components/schemas/money'
       - $ref: '#/components/schemas/file'
       - $ref: '#/components/schemas/image'
-      - $ref: '#/components/schemas/generic'
       - $ref: '#/components/schemas/ref'
       - $ref: '#/components/schemas/backref'
       - $ref: '#/components/schemas/array'
       - $ref: '#/components/schemas/url'
       - $ref: '#/components/schemas/uri'
-      - $ref: '#/components/schemas/jsonobject'
+      - $ref: '#/components/schemas/object'
 additionalProperties: false
 description: |
   Object represents a single row in a table.

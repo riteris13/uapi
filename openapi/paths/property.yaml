@@ -71,7 +71,7 @@ get:
               - $ref: ../components/schemas/binary.yaml
               - $ref: ../components/schemas/string.yaml
               - $ref: ../components/schemas/text.yaml
-              - $ref: ../components/schemas/dateTime.yaml
+              - $ref: ../components/schemas/datetime.yaml
               - $ref: ../components/schemas/date.yaml
               - $ref: ../components/schemas/time.yaml
               - $ref: ../components/schemas/temporal.yaml
@@ -79,13 +79,12 @@ get:
               - $ref: ../components/schemas/spatial.yaml
               - $ref: ../components/schemas/money.yaml
               - $ref: ../components/schemas/image.yaml
-              - $ref: ../components/schemas/generic.yaml
               - $ref: ../components/schemas/ref.yaml
               - $ref: ../components/schemas/backref.yaml
               - $ref: ../components/schemas/array.yaml
               - $ref: ../components/schemas/url.yaml
               - $ref: ../components/schemas/uri.yaml
-              - $ref: ../components/schemas/jsonobject.yaml
+              - $ref: ../components/schemas/object.yaml
     '304':
       description: Not Modified
       headers:

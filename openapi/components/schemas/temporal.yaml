@@ -1,2 +1,2 @@
-description: Temporal definition in time. Same format as `dateTime`
+description: Temporal definition in time. Same format as `datetime`
 type: string

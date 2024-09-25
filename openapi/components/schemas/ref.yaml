@@ -17,7 +17,7 @@ oneOf:
           - $ref: ./binary.yaml
           - $ref: ./string.yaml
           - $ref: ./text.yaml
-          - $ref: ./dateTime.yaml
+          - $ref: ./datetime.yaml
           - $ref: ./date.yaml
           - $ref: ./time.yaml
           - $ref: ./temporal.yaml
@@ -26,13 +26,12 @@ oneOf:
           - $ref: ./money.yaml
           - $ref: ./file.yaml
           - $ref: ./image.yaml
-          - $ref: ./generic.yaml
           - $ref: ./ref.yaml
           - $ref: ./backref.yaml
           - $ref: ./array.yaml
           - $ref: ./url.yaml
           - $ref: ./uri.yaml
-          - $ref: ./jsonobject.yaml
+          - $ref: ./object.yaml
   - type: object
     title: Maturity < 4
     properties:
@@ -47,7 +46,7 @@ oneOf:
           - $ref: ./binary.yaml
           - $ref: ./string.yaml
           - $ref: ./text.yaml
-          - $ref: ./dateTime.yaml
+          - $ref: ./datetime.yaml
           - $ref: ./date.yaml
           - $ref: ./time.yaml
           - $ref: ./temporal.yaml
@@ -56,10 +55,9 @@ oneOf:
           - $ref: ./money.yaml
           - $ref: ./file.yaml
           - $ref: ./image.yaml
-          - $ref: ./generic.yaml
           - $ref: ./ref.yaml
           - $ref: ./backref.yaml
           - $ref: ./array.yaml
           - $ref: ./url.yaml
           - $ref: ./uri.yaml
-          - $ref: ./jsonobject.yaml
+          - $ref: ./object.yaml
