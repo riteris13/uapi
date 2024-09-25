@@ -1,2 +1,0 @@
-description: The amount of a certain currency. Currency code is provided in `property.ref` in accordance to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-type: number

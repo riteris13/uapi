@@ -1,7 +1,0 @@
-description: For objects that have been deleted during change, `type` value is changed to `absent`
-type: object
-properties:
-  type:
-    type: string
-    enum:
-      - absent
