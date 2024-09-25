@@ -1,9 +1,0 @@
-type: object
-properties:
-  _data:
-    type: array
-    items:
-      anyOf:
-        - $ref: ./_op.yaml
-        - $ref: ./_type.yaml
-        - $ref: ./insert.yaml

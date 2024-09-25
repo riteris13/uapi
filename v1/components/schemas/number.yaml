@@ -1,2 +1,0 @@
-description: A value of a real number, based on Floating-Point Arithmetic (IEEE 754), with a decimal point marked with `.`. Whole number can be up to 6 characters in lengh.
-type: number

@@ -1,8 +1,0 @@
-type: object
-properties:
-  _type:
-    $ref: ./_type.yaml
-  _data:
-    type: array
-    items:
-      $ref: ./change.yaml

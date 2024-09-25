@@ -1,9 +1,0 @@
-name: version
-in: path
-required: true
-schema:
-  $ref: ../schemas/datasetVersion.yaml
-description: |
-  Version determines a specific dataset version to be used when accessing data. This version definitions and metadata can be found in the catalog.
-
-  If version parameter is not provided, latest version is defaulted.

@@ -1,9 +1,0 @@
-name: dataset
-in: path
-required: true
-schema:
-  $ref: ../schemas/dataset.yaml
-description: |
-  A dataset or a standard abbreviation or short code name.
-
-  All lower case, words separated with `_` symbol.

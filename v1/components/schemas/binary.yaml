@@ -1,3 +1,0 @@
-description: Binary string of data. A single set should not exceed 1G
-type: string
-pattern: ^[0-1]+$

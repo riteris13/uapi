@@ -1,2 +1,0 @@
-description: Array of data. It is recommended to avoid this type and instead use `backref`
-type: array

@@ -1,9 +1,0 @@
-name: If-None-Match
-in: header
-required: false
-description: |
-  Using `If-None-Match` client can provide a revision number of an object to server to check if modification to the object has occured, if not, server will return `304 - Not Modified`.
-schema:
-  type: string
-  examples:
-    - 16dabe62-61e9-4549-a6bd-07cecfbc3508

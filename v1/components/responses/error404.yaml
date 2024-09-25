@@ -1,8 +1,0 @@
-description: Not Found
-headers:
-  traceresponse:
-    $ref: ../headers/traceresponse.yaml
-content:
-  application/json:
-    schema:
-      $ref: ../schemas/ItemDoesNotExist.yaml
