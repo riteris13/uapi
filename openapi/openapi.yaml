@@ -1,7 +1,7 @@
 openapi: 3.1.0
 
 info:
-  version: 0.2.3
+  version: 1.0.1
   title: Universal application programming interface
   contact:
     name: IVPK
@@ -13,7 +13,7 @@ info:
   summary: |
     Universal API specification, provided as OpenAPI JSON file for Lithuanian
     government institutions as a template for implementing API's for data
-    exchange in a standardized and interoperable manner.
+    exchange in a standardized and interoperable manner. Living Document
   description:
     $ref: docs.md
 
